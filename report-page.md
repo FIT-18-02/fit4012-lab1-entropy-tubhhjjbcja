@@ -1,7 +1,7 @@
 # Report 1 Page – FIT4012 Lab 1
 
 ## 1. Mục tiêu
-Tóm tắt ngắn gọn mục tiêu của bài lab.
+ mục tiêu của bài lab: tìm hiểu cách tính entropy, độ dư thừa thông tin và cách tìm nghịch đảo modulo.
 
 ## 2. Cách làm
 - Đọc hiểu chương trình entropy mẫu.
@@ -13,16 +13,16 @@ Tóm tắt ngắn gọn mục tiêu của bài lab.
 ### 3.1 Entropy và redundancy
 | Input | Entropy | Redundancy | Nhận xét |
 |---|---:|---:|---|
-| aaaa |  |  |  |
-| abcd |  |  |  |
-| hello world |  |  |  |
+| aaaa | 0 | 8 | Entropy thấp, redundancy cao |
+| abcd | 2 | 6 | Entropy cao hơn aaaa |
+| hello world | 2.84535 | 5.15465 | Kết quả tính hợp lệ |
 
 ### 3.2 Modulo inverse
 | a | m | Kết quả mong đợi | Kết quả chương trình |
 |---:|---:|---|---|
-| 3 | 7 | 5 |  |
-| 10 | 17 | 12 |  |
-| 6 | 9 | Không tồn tại |  |
+| 3 | 7 | 5 | 5 |
+| 10 | 17 | 12 | 12 |
+| 6 | 9 | Không tồn tại | Không tồn tại |
 
 ## 4. Kết luận
-Nêu ngắn gọn em học được gì từ bài lab, khó khăn lớn nhất là gì, và điều gì giúp em hiểu rõ hơn về entropy hoặc modulo inverse.
+Qua bài lab, em hiểu cách tính entropy của chuỗi ký tự, cách suy ra độ dư thừa thông tin, và biết áp dụng thuật toán Euclid mở rộng để tìm nghịch đảo modulo.
