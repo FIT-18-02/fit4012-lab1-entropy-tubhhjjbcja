@@ -2,6 +2,8 @@
 using namespace std;
 
 int gcd(int a, int b) {
+    a = abs(a);
+    b = abs(b);
     while (b != 0) {
         int temp = b;
         b = a % b;
@@ -36,10 +38,18 @@ int main() {
     int a = 0, m = 0;
     cout << "Nhap a, m: ";
     cin >> a >> m;
+    
+    // Kiểm tra đầu vào
+    if (m <= 0) {
+        cout << "Loi: m phai > 0\n";
+        return 0;
+    }
+    
     if (gcd(a, m) != 1) {
         cout << "Khong ton tai nghich dao modulo vi gcd(a, m) != 1.\n";
         return 0;
     }
+    
     int inv = mod_inverse(a, m);
     cout << "Nghich dao cua " << a << " mod " << m << " la: " << inv << '\n';
     cout << "Kiem tra: " << a << " * " << inv << " % " << m
