@@ -11,4 +11,6 @@
 - [X] Đã chạy với `6 9`
 
 ## Điều em học được từ bài lab
-Khong ton tai nghich dao modulo vi gcd(a, m) != 1.
+Qua bài lab này, em hiểu rõ hơn cách tính entropy của một chuỗi ký tự và cách suy ra độ dư thừa thông tin từ entropy.
+Em cũng biết dùng thuật toán Euclid mở rộng để tìm nghịch đảo modulo.
+Ngoài ra, em hiểu rằng nghịch đảo modulo chỉ tồn tại khi `gcd(a, m) = 1`.
