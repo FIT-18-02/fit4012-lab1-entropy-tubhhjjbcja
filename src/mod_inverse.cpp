@@ -1,58 +1,29 @@
-#include <iostream>
-using namespace std;
+def gcd(a, b):
+    a = abs(a)
+    b = abs(b)
+    while b != 0:
+        a, b = b, a % b
+    return a
 
-int gcd(int a, int b) {
-    a = abs(a);
-    b = abs(b);
-    while (b != 0) {
-        int temp = b;
-        b = a % b;
-        a = temp;
-    }
-    return a;
-}
+def extended_euclid(a, b):
+    if b == 0:
+        return a, 1, 0
+    gcd_val, x1, y1 = extended_euclid(b, a % b)
+    x = y1
+    y = x1 - (a // b) * y1
+    return gcd_val, x, y
 
-int extended_euclid(int a, int b, int &x, int &y) {
-    if (b == 0) {
-        x = 1;
-        y = 0;
-        return a;
-    }
-    int x1 = 0, y1 = 0;
-    int g = extended_euclid(b, a % b, x1, y1);
-    x = y1;
-    y = x1 - (a / b) * y1;
-    return g;
-}
-
-int mod_inverse(int a, int m) {
-    int x, y;
-    int g = extended_euclid(a, m, x, y);
-    if (g != 1) {
-        return -1;
-    }
-    return (x % m + m) % m;
-}
-
-int main() {
-    int a = 0, m = 0;
-    cout << "Nhap a, m: ";
-    cin >> a >> m;
+def mod_inverse(a, m):
+    """
+    Calculate the modular multiplicative inverse of a modulo m.
+    Returns x such that (a * x) % m == 1
+    """
+    if m <= 0:
+        raise ValueError("m phai > 0")
     
-    // Kiểm tra đầu vào
-    if (m <= 0) {
-        cout << "Loi: m phai > 0\n";
-        return 0;
-    }
+    g, x, _ = extended_euclid(a % m, m)
     
-    if (gcd(a, m) != 1) {
-        cout << "Khong ton tai nghich dao modulo vi gcd(a, m) != 1.\n";
-        return 0;
-    }
+    if g != 1:
+        raise ValueError("Khong ton tai nghich dao modulo vi gcd(a, m) != 1")
     
-    int inv = mod_inverse(a, m);
-    cout << "Nghich dao cua " << a << " mod " << m << " la: " << inv << '\n';
-    cout << "Kiem tra: " << a << " * " << inv << " % " << m
-         << " = " << (1LL * a * inv % m) << '\n';
-    return 0;
-}
+    return (x % m + m) % m
