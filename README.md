@@ -19,7 +19,7 @@ Sau khi hoàn thành bài này, sinh viên có thể:
 ## Yêu cầu nộp bài
 Hoàn thiện repo và nộp link GitHub. Repo cần có:
 - `README.md`
-- `report-1page.md`
+- `report-page.md`
 - `tests/` với ít nhất 5 test cases
 - `logs/` có kết quả chạy thử
 - mã nguồn hoàn thiện cho Q1, Q2, Q3
